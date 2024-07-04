@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int ans[50];
+    int climbStairs(int n) {
+        if(ans[n]!=0) 
+        return ans[n];
+        if(n==1 || n==2)
+         return n;
+        ans[n]=climbStairs(n-1)+climbStairs(n-2);
+        return ans[n]; 
+    }
+};
