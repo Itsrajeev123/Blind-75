@@ -1,0 +1,18 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    void deleteNode(ListNode* node) {
+        node->val = node->next->val;//copying the next node value
+        node->next = node->next->next;// deleting the next node
+    }
+};
+
+//when you have already have a given value in question to be deleted.
+// jaise 1 2 3 4 5 isme se hume 3 ko delete krna hai then 1 2 4 5 ye aayega result.
